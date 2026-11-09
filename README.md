@@ -60,3 +60,9 @@ Step 5 removes 3,157 sessions of the original export, so the gap between April 2
 | Warm-up | the first 672 hours (4 weeks) of each series |
 
 The remaining hours are the valid target hours (`valid`), identical for every model. Flagged hours stay in the series so that the lag windows stay aligned, but they are excluded from the targets of training, validation and test scoring.
+
+## License, AI assistance and citation
+
+- **Code:** MIT License (see `LICENSE`). The ACN-Data records are not covered by this license; they come from the Caltech ACN-Data project (https://ev.caltech.edu/dataset), which asks users to cite Lee, Li and Low, "ACN-Data: Analysis and Applications of an Open EV Charging Dataset", e-Energy 2019.
+- **AI assistance:** the group used Claude (Anthropic) to help write and re-run code, check the numbers against the notebook outputs, and draft the paper and the documentation. The experiments reported in the paper were run by the group in Kaggle notebooks, and the authors are responsible for the content.
+- **Citation:** see the BibTeX entry at the end of `REPRODUCE.md`.

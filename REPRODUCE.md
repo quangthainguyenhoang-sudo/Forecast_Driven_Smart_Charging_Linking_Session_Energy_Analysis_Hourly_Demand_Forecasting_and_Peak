@@ -297,9 +297,9 @@ Số thứ tự bảng và hình theo thứ tự xuất hiện trong bài báo; 
 
 ## 12. Giấy phép, trích dẫn, khai báo AI
 
-- Giấy phép mã nguồn của nhóm: Repo hiện chưa có file LICENSE nên theo mặc định mọi quyền được bảo lưu (người khác chưa được phép sao chép hay dùng lại mã). Nhóm cần chọn giấy phép (ví dụ MIT hoặc Apache-2.0) và thêm file LICENSE vào repo **[CẦN QUYẾT ĐỊNH]**.
+- Giấy phép mã nguồn của nhóm: MIT (file `LICENSE` ở gốc repo, bản quyền 2026 Nguyễn Hoàng Quang Thái, Nguyễn Minh Phương). Dữ liệu ACN-Data không thuộc giấy phép này; xem Mục 5.1.
 - Dữ liệu: ACN-Data (xem 5.1); cần trích dẫn Lee, Li và Low (2019). Thư viện dùng: scikit-learn, XGBoost, LightGBM, Optuna, TensorFlow/Keras, pandas, numpy, scipy, matplotlib, seaborn; giấy phép theo từng dự án gốc.
-- Khai báo công cụ AI: nhóm đã dùng Claude (Anthropic) hỗ trợ viết mã, chạy lại thí nghiệm, viết bài báo và tài liệu này. Mức độ kiểm chứng của nhóm đối với từng phần: **[CẦN BỔ SUNG]** (có thể dẫn chiếu tới file nhật ký sử dụng AI của nhóm). **[CẦN XÁC NHẬN]** nội dung khai báo này trước khi nộp.
+- Khai báo công cụ AI: nhóm đã dùng Claude (Anthropic) để hỗ trợ viết và chạy lại mã, đối chiếu số liệu trong bài với đầu ra của notebook, soạn bài báo và tài liệu này. Các thí nghiệm trong bài do nhóm chạy trên notebook Kaggle; nhóm chịu trách nhiệm về nội dung. Mức độ nhóm tự rà soát từng phần (mã, thí nghiệm, bài báo) ghi trong nhật ký sử dụng AI của nhóm **[CẦN XÁC NHẬN]**.
 - Cách trích dẫn dự án (khi chưa có bài công bố), dạng BibTeX; thứ tự tác giả và việc có ghi GVHD hay không là **[CẦN XÁC NHẬN]**; khi bài được công bố thì thay bằng bài báo: 
 
 ```bibtex
