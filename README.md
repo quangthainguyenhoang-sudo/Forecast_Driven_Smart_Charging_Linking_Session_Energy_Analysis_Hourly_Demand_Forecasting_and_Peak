@@ -6,28 +6,27 @@ Code for the paper "Forecast-Driven Smart Charging: Linking Session Energy Analy
 - RQ2: hourly demand forecasting (sites 1, 2; horizons 1 h and 24 h)
 - RQ3: cap-based smart charging scheduler driven by the RQ2 forecasts
 
-## Notebooks (`notebooks/`)
+## Notebooks (repository root)
 
 Some notebooks are saved with the outputs of the final runs and some without. A notebook without outputs has to be run to reproduce its results.
 
 | Notebook | Content |
 |---|---|
-| `rq1-session-factors.ipynb` | Earlier RQ1 version (not used for the current results) |
 | `persistence.ipynb` | RQ2 baseline: persistence |
-| `seasonal-naive.ipynb` | RQ2 baseline: seasonal naive |
-| `linear-regression.ipynb` | RQ1 session energy: tuned linear model (elastic net) |
+| `seasonal_naive.ipynb` | RQ2 baseline: seasonal naive |
+| `linear_regression.ipynb` | RQ1 session energy: tuned linear model (elastic net) |
 | `xgboost.ipynb` | RQ1 session energy: tuned XGBoost |
 | `lightgbm.ipynb` | RQ1 session energy: tuned LightGBM |
-| `lstm-rq2-ev-charging.ipynb` | RQ2 recurrent network |
-| `hybrid-rq2-ev-charging.ipynb` | RQ2 hybrid base learners |
-| `ridge-meta-learner.ipynb` | RQ2 Ridge stacking of the hybrid |
-| `rq2-aggregate.ipynb` | RQ2 aggregation of results |
-| `rq3-smart-charging.ipynb` | RQ3 smart charging simulation |
-| `../scripts/rq1_group_importance_v3.py`, `../scripts/rq1_oof_importance.py` | RQ1 factor importance (Table 3): test-block and out-of-fold permutation |
+| `lstm.ipynb` | RQ2 recurrent network |
+| `hybrid.ipynb` | RQ2 hybrid base learners |
+| `ridge_meta_learner.ipynb` | RQ2 Ridge stacking of the hybrid |
+| `rq2_aggregate.ipynb` | RQ2 aggregation of results |
+| `rq3_smart_charging.ipynb` | RQ3 smart charging simulation |
+| `scripts/rq1_group_importance_v3.py`, `scripts/rq1_oof_importance.py` | RQ1 factor importance (Table 3): test-block and out-of-fold permutation |
 
 ## Data
 
-The ACN-Data sessions are not included. Download them from the ACN-Data portal (Lee, Li and Low, 2019): https://ev.caltech.edu/dataset . Set the input path inside each notebook.
+The ACN-Data sessions are not included. Download them from the ACN-Data portal (Lee, Li and Low, 2019): https://ev.caltech.edu/dataset . Set the input path inside each notebook. The scripts read the cleaned session table from the path in the environment variable `ACN_XLSX` and write their results to the folder in `RQ1_OUT` (current folder by default).
 
 ## Split and data cleaning
 
