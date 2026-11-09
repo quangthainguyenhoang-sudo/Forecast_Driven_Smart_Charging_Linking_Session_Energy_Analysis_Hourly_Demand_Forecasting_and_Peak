@@ -11,7 +11,7 @@
 | GVHD | Lê Nhật Tùng |
 | Thành viên (họ tên – vai trò) | Nguyễn Hoàng Quang Thái – ML Engineer · Nguyễn Minh Phương – Data Analyst |
 | Repo | https://github.com/quangthainguyenhoang-sudo/Forecast_Driven_Smart_Charging_Linking_Session_Energy_Analysis_Hourly_Demand_Forecasting_and_Peak · tag/commit: `v1.0` / `8fe9586cda451d8d2d82b70c8d332de7fbcdb9f7` |
-| Dữ liệu đã xử lý | Kaggle Dataset `quangthai0406/acn-cleaned-sessions-dap391m`, hiện là Version 4, 17.9 MB (2 file: `acn_data(cleaned)_fixed.xlsx` 8.78 MB và `acn_data_full_original.xlsx`; bản cleaned trên Kaggle đang tên `_fixed`, khác tên `acn_data(cleaned).xlsx` mà các lệnh trong tài liệu và glob của notebook dùng, cần kiểm tra lại cho khớp **[CẦN XÁC NHẬN]**). Hiện ở chế độ **Private** (người ngoài nhóm mở link sẽ thấy lỗi 404), nên người chấm không tải được; cần chuyển sang công khai hoặc cho người chấm quyền truy cập trước khi nộp **[CẦN QUYẾT ĐỊNH]**. |
+| Dữ liệu đã xử lý | Kaggle Dataset `quangthai0406/acn-cleaned-sessions-dap391m`, hiện là Version 4, 17.9 MB (2 file: `acn_data(cleaned)_fixed.xlsx` 8.78 MB và `acn_data_full_original.xlsx`; bản cleaned trên Kaggle đang tên `_fixed`, khác tên `acn_data(cleaned).xlsx` mà các lệnh trong tài liệu và glob của notebook dùng, cần kiểm tra lại cho khớp **[CẦN XÁC NHẬN]**). Từ 9/11/2026 đặt Link Sharing = On (ai có link đều xem và tải được, không hiện trong tìm kiếm): https://kaggle.com/datasets/5a02f79cbebbc98ca96ab246f6a2ff13646241f446d52d6662fbd079fa4aa6cf . License = "Other (specified in description)", mô tả ghi nguồn Caltech và cách trích dẫn. Chưa đặt Public hoàn toàn vì Dataset còn chứa file gốc ACN-Data (điều khoản phân phối lại của nguồn không rõ); nếu muốn Public thì nên bỏ file gốc khỏi Dataset trước. |
 | Checkpoint | Không có. Dự án không phát hành checkpoint; mọi kết quả được tạo lại bằng notebook (xem Mục 8). |
 | Cập nhật / phiên bản tài liệu | 9/11/2026 · v1.1 |
 
@@ -97,7 +97,7 @@ Mong đợi: Python 3.13.15, scikit-learn 1.6.1, XGBoost 3.4.1, LightGBM 4.6.0, 
 
 ### 5.1 Nguồn và giấy phép
 - Nguồn: ACN-Data (Caltech và JPL), https://ev.caltech.edu/dataset ; bài cần trích dẫn: Lee, Z. J., Li, T., Low, S. H. (2019), *ACN-Data: Analysis and Applications of an Open EV Charging Dataset*, Proc. 10th Int. Conf. on Future Energy Systems (e-Energy '19).
-- Trang nguồn (https://ev.caltech.edu/dataset, kiểm tra ngày 9/11/2026) không nêu giấy phép; chỉ yêu cầu người dùng đăng ký để dùng API và trích dẫn bài trên khi công bố. Dataset Kaggle của nhóm đang để License = Unknown. Vì trang nguồn không cấm cũng không cho phép rõ ràng việc phân phối lại, đề xuất: công khai chỉ bản cleaned (kèm trích dẫn Lee, Li và Low 2019, ghi rõ nguồn Caltech/JPL/PowerFlex và chọn License = "Other (specified in description)"), hoặc để Private và cho người chấm truy cập; nếu muốn chắc chắn thì hỏi ban quản trị ACN-Data (địa chỉ liên hệ trên trang nguồn). Quyết định thuộc nhóm **[CẦN QUYẾT ĐỊNH]**.
+- Trang nguồn (https://ev.caltech.edu/dataset, kiểm tra ngày 9/11/2026) không nêu giấy phép; chỉ yêu cầu người dùng đăng ký để dùng API và trích dẫn bài trên khi công bố. Dataset Kaggle của nhóm: License = "Other (specified in description)" (đã đặt 9/11/2026), mô tả ghi nguồn Caltech, ngày tải 30/9/2026 và cách trích dẫn Lee, Li và Low (2019). Vì điều khoản phân phối lại của nguồn không rõ nên nhóm chọn Link Sharing (ai có link xem được) thay cho Public; Dataset vẫn chứa file gốc nên Public hoàn toàn là quyết định của nhóm **[CẦN QUYẾT ĐỊNH]**.
 - Ngày tải dữ liệu gốc: 30/9/2026 (nhóm khai báo). File gốc trong thư mục dự án được lưu ngày 1/10/2026 và dữ liệu kết thúc ngày 13/9/2021.
 
 ### 5.2 Mô tả dữ liệu (đo trực tiếp từ hai file)
@@ -276,7 +276,7 @@ Số thứ tự bảng và hình theo thứ tự xuất hiện trong bài báo; 
 **Phần chưa tái lập hoàn toàn:**
 - Các quy tắc làm sạch dữ liệu (66,745 → 60,105 phiên) được suy ra từ dữ liệu, không phải mã gốc của nhóm; script tái tạo khớp 100% với bản cleaned (xem 5.4). Lý do loại các phiên từ 1/4/2020 đến 31/1/2021 chưa được ghi lại.
 - Cấu hình Persistence được tìm trong notebook `persistence-tune`, hiện chưa nằm trong repo (đang ở thư mục chờ xóa của dự án); cần đưa vào repo hoặc ghi lại cách tìm.
-- Dataset Kaggle đang Private và chưa có License (xem Mục 5.1).
+- Dataset Kaggle: Link Sharing On, License "Other"; chưa Public hoàn toàn (xem Mục 0 và 5.1).
 - Chưa có `requirements.txt`; phiên bản numpy, pandas, TensorFlow chưa ghi.
 - Fig. 2 tạo lại khớp từng byte bằng scripts/make_fig2_fig3.py; Fig. 3 tạo lại cùng số liệu nhưng khác kiểu vẽ (xem Mục 10).
 - Các cột thời gian của bản cleaned dùng đồng hồ UTC−7 cố định (xem 5.4); tác động lên kết quả chưa được kiểm tra.
