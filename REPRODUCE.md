@@ -11,7 +11,7 @@
 | GVHD | Lê Nhật Tùng |
 | Thành viên (họ tên – vai trò) | Nguyễn Hoàng Quang Thái – ML Engineer · Nguyễn Minh Phương – Data Analyst |
 | Repo | https://github.com/quangthainguyenhoang-sudo/Forecast_Driven_Smart_Charging_Linking_Session_Energy_Analysis_Hourly_Demand_Forecasting_and_Peak · tag/commit: `v1.0` / `8fe9586cda451d8d2d82b70c8d332de7fbcdb9f7` |
-| Dữ liệu đã xử lý | Kaggle Dataset `quangthai0406/acn-cleaned-sessions-dap391m`, Version 3, 17.9 MB (2 file: `acn_data(cleaned).xlsx` 8.78 MB, `acn_data_full_original.xlsx`). Hiện ở chế độ **Private**, cần chuyển sang công khai/“bất kỳ ai có liên kết” trước khi nộp. |
+| Dữ liệu đã xử lý | Kaggle Dataset `quangthai0406/acn-cleaned-sessions-dap391m`, hiện là Version 4, 17.9 MB (2 file: `acn_data(cleaned)_fixed.xlsx` 8.78 MB và `acn_data_full_original.xlsx`; bản cleaned trên Kaggle đang tên `_fixed`, khác tên `acn_data(cleaned).xlsx` mà các lệnh trong tài liệu và glob của notebook dùng, cần kiểm tra lại cho khớp **[CẦN XÁC NHẬN]**). Hiện ở chế độ **Private** (người ngoài nhóm mở link sẽ thấy lỗi 404), nên người chấm không tải được; cần chuyển sang công khai hoặc cho người chấm quyền truy cập trước khi nộp **[CẦN QUYẾT ĐỊNH]**. |
 | Checkpoint | Không có. Dự án không phát hành checkpoint; mọi kết quả được tạo lại bằng notebook (xem Mục 8). |
 | Cập nhật / phiên bản tài liệu | 9/11/2026 · v1.1 |
 
@@ -91,14 +91,14 @@ for p in ["numpy","pandas","scipy","scikit-learn","xgboost","lightgbm","optuna",
     except m.PackageNotFoundError: print(p, "not installed")
 ```
 
-Mong đợi: Python 3.13.15, scikit-learn 1.6.1, XGBoost 3.4.1, LightGBM 4.6.0, Optuna 5.0.0, TensorFlow 2.20.0 (khớp log). **[CẦN BỔ SUNG]** phiên bản numpy, pandas, scipy, matplotlib, seaborn, Keras, openpyxl từ lần in này (log của notebook không ghi các thư viện đó). Không có API key hay biến môi trường nào cần thiết.
+Mong đợi: Python 3.13.15, scikit-learn 1.6.1, XGBoost 3.4.1, LightGBM 4.6.0, Optuna 5.0.0, TensorFlow 2.20.0 (khớp log). Phiên bản các thư viện mà log notebook không ghi, lấy bằng cách chạy cell trên Kaggle ngày 9/11/2026 (image mặc định lúc đó: Python 3.13.18, TensorFlow 2.21.0): numpy 2.1.3, pandas 2.3.3, scipy 1.16.3, matplotlib 3.10.0, seaborn 0.13.2, Keras 3.13.2, openpyxl 3.1.5. Cùng lần chạy đó scikit-learn 1.6.1, XGBoost 3.4.1, LightGBM 4.6.0, Optuna 5.0.0 trùng với log ngày 2/11, nhưng Python và TensorFlow đã đổi (log 2/11: Python 3.13.15, TensorFlow 2.20.0). Vì vậy bảy số trên là của image ngày 9/11, nên có thể lệch patch so với image ngày chạy thí nghiệm **[CẦN XÁC NHẬN]** (cách chắc chắn: chạy cell in phiên bản ở cuối mỗi notebook khi chạy lại). Không có API key hay biến môi trường nào cần thiết.
 
 ## 5. Dữ liệu
 
 ### 5.1 Nguồn và giấy phép
 - Nguồn: ACN-Data (Caltech và JPL), https://ev.caltech.edu/dataset ; bài cần trích dẫn: Lee, Z. J., Li, T., Low, S. H. (2019), *ACN-Data: Analysis and Applications of an Open EV Charging Dataset*, Proc. 10th Int. Conf. on Future Energy Systems (e-Energy '19).
-- Trang nguồn (https://ev.caltech.edu/dataset, kiểm tra ngày 9/11/2026) không nêu giấy phép; chỉ yêu cầu người dùng đăng ký để dùng API và trích dẫn bài trên khi công bố. Dataset Kaggle của nhóm đang để License = Unknown; vì trang nguồn không nêu điều kiện phân phối lại, việc công khai Dataset là quyết định của nhóm **[CẦN XÁC NHẬN]**.
-- Ngày tải dữ liệu gốc: **[CẦN XÁC NHẬN]**. File gốc trong thư mục dự án được lưu ngày 1/10/2026 và dữ liệu kết thúc ngày 13/9/2021.
+- Trang nguồn (https://ev.caltech.edu/dataset, kiểm tra ngày 9/11/2026) không nêu giấy phép; chỉ yêu cầu người dùng đăng ký để dùng API và trích dẫn bài trên khi công bố. Dataset Kaggle của nhóm đang để License = Unknown. Vì trang nguồn không cấm cũng không cho phép rõ ràng việc phân phối lại, đề xuất: công khai chỉ bản cleaned (kèm trích dẫn Lee, Li và Low 2019, ghi rõ nguồn Caltech/JPL/PowerFlex và chọn License = "Other (specified in description)"), hoặc để Private và cho người chấm truy cập; nếu muốn chắc chắn thì hỏi ban quản trị ACN-Data (địa chỉ liên hệ trên trang nguồn). Quyết định thuộc nhóm **[CẦN QUYẾT ĐỊNH]**.
+- Ngày tải dữ liệu gốc: 30/9/2026 (nhóm khai báo). File gốc trong thư mục dự án được lưu ngày 1/10/2026 và dữ liệu kết thúc ngày 13/9/2021.
 
 ### 5.2 Mô tả dữ liệu (đo trực tiếp từ hai file)
 | | Dữ liệu gốc (`acn_data_full_original.xlsx`) | Dữ liệu cleaned v3 (`acn_data(cleaned).xlsx`) |
@@ -135,8 +135,8 @@ Bản cleaned v3 được tạo bằng các quy tắc dưới đây. Đây là q
 
 Ghi chú về các quy tắc:
 
-1. Bước 5 loại 3,157 phiên có thật của bản gốc (site 1: 2,363; site 2: 599; site 19: 195; trong đó 2,778 phiên còn lại sau các bước 1–4). Vì vậy khoảng "mất dữ liệu" từ 31/3/2020 đến 1/2/2021 trong chuỗi theo giờ do bước làm sạch này tạo ra, không phải do thiết bị ngừng ghi. Lý do loại không được ghi lại trong dự án **[CẦN XÁC NHẬN]**.
-2. Hằng số 3.1504 kW (3.150423511) là giá trị quan sát được trong bản cleaned: mọi phiên được gán doneChargingTime (2,129 phiên) có kWh / charging_duration bằng đúng giá trị này. Nó gần tổng kWh / tổng giờ sạc của các phiên có doneChargingTime, nhưng cách tính chính xác chưa xác định được.
+1. Bước 5 loại 3,157 phiên có thật của bản gốc (site 1: 2,363; site 2: 599; site 19: 195; trong đó 2,778 phiên còn lại sau các bước 1–4). Vì vậy khoảng "mất dữ liệu" từ 31/3/2020 đến 1/2/2021 trong chuỗi theo giờ do bước làm sạch này tạo ra, không phải do thiết bị ngừng ghi. Lý do loại theo nhóm: giai đoạn đại dịch COVID-19. Paper hiện viết đây là "outage" của việc thu thập dữ liệu, cần sửa lại cho khớp (xem Mục 11).
+2. Hằng số 3.1504 kW (3.150423511) là giá trị quan sát được trong bản cleaned: mọi phiên được gán doneChargingTime (2,129 phiên) có kWh / charging_duration bằng đúng giá trị này. Đã kiểm tra trên bản gốc (9/11/2026): tổng kWh / tổng giờ sạc của các phiên có doneChargingTime và kWh trong (0.5; 40) là 3.15005 (60,784 phiên), lệch 0.012% so với 3.150423511; thử mọi tổ hợp các bộ lọc còn lại cũng không ra đúng giá trị. Vậy hằng số này xấp xỉ "tổng kWh / tổng giờ sạc sau khi lọc kWh", nhưng tập phiên chính xác để tính ra nó không tái tạo được. Với tập dữ liệu hiện tại, giá trị chỉ dùng để gán 2,129 phiên thiếu doneChargingTime, nên script dùng đúng hằng số này.
 3. Các cột thời gian của bản cleaned dùng đồng hồ UTC−7 cố định, không chuyển sang UTC−8 vào mùa đông. Trong các tháng mùa đông, giờ trong bảng muộn hơn đồng hồ thực 1 giờ so với chuỗi thời gian có kèm múi giờ của bản gốc. Các cột hour, hour_sin, hour_cos, day_of_week, is_holiday… đều tính từ đồng hồ này, và chuỗi theo giờ cũng dựng từ các cột thời gian đó.
 4. Mô tả làm sạch trong README cũ (bỏ trùng theo (stationID, connectionTime), kWh ≤ 0, ngắt kết nối trước khi cắm) chỉ loại 1 phiên trên dữ liệu gốc, nên không giải thích được 6,640 phiên bị loại; README được sửa theo bảng trên.
 
@@ -276,7 +276,7 @@ Số thứ tự bảng và hình theo thứ tự xuất hiện trong bài báo; 
 **Phần chưa tái lập hoàn toàn:**
 - Các quy tắc làm sạch dữ liệu (66,745 → 60,105 phiên) được suy ra từ dữ liệu, không phải mã gốc của nhóm; script tái tạo khớp 100% với bản cleaned (xem 5.4). Lý do loại các phiên từ 1/4/2020 đến 31/1/2021 chưa được ghi lại.
 - Cấu hình Persistence được tìm trong notebook `persistence-tune`, hiện chưa nằm trong repo (đang ở thư mục chờ xóa của dự án); cần đưa vào repo hoặc ghi lại cách tìm.
-- Dataset Kaggle đang Private và chưa có License.
+- Dataset Kaggle đang Private và chưa có License (xem Mục 5.1).
 - Chưa có `requirements.txt`; phiên bản numpy, pandas, TensorFlow chưa ghi.
 - Fig. 2 tạo lại khớp từng byte bằng scripts/make_fig2_fig3.py; Fig. 3 tạo lại cùng số liệu nhưng khác kiểu vẽ (xem Mục 10).
 - Các cột thời gian của bản cleaned dùng đồng hồ UTC−7 cố định (xem 5.4); tác động lên kết quả chưa được kiểm tra.
