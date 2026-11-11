@@ -299,7 +299,7 @@ Số thứ tự bảng và hình theo thứ tự xuất hiện trong bài báo; 
 
 - Giấy phép mã nguồn của nhóm: MIT (file `LICENSE` ở gốc repo, bản quyền 2026 Nguyễn Hoàng Quang Thái, Nguyễn Minh Phương). Dữ liệu ACN-Data không thuộc giấy phép này; xem Mục 5.1.
 - Dữ liệu: ACN-Data (xem 5.1); cần trích dẫn Lee, Li và Low (2019). Thư viện dùng: scikit-learn, XGBoost, LightGBM, Optuna, TensorFlow/Keras, pandas, numpy, scipy, matplotlib, seaborn; giấy phép theo từng dự án gốc.
-- Khai báo công cụ AI: nhóm đã dùng Claude (Anthropic) để hỗ trợ viết và chạy lại mã, đối chiếu số liệu trong bài với đầu ra của notebook, soạn bài báo và tài liệu này. Các thí nghiệm trong bài do nhóm chạy trên notebook Kaggle; nhóm chịu trách nhiệm về nội dung. Mức độ nhóm tự rà soát từng phần (mã, thí nghiệm, bài báo) ghi trong nhật ký sử dụng AI của nhóm **[CẦN XÁC NHẬN]**.
+- Khai báo công cụ AI: nhóm đã dùng Claude (Anthropic) để hỗ trợ viết và chạy lại mã, đối chiếu số liệu trong bài với đầu ra của notebook, soạn bài báo và tài liệu này; Gemini và ChatGPT chỉ dùng để phản biện độc lập bài báo. Các prompt lõi ghi trong AI Audit Log của nhóm. Các thí nghiệm trong bài do nhóm chạy trên notebook Kaggle; nhóm chịu trách nhiệm về nội dung. Mức độ nhóm tự rà soát từng phần (mã, thí nghiệm, bài báo) ghi trong nhật ký sử dụng AI của nhóm **[CẦN XÁC NHẬN]**.
 - Cách trích dẫn dự án (khi chưa có bài công bố), dạng BibTeX; thứ tự tác giả và việc có ghi GVHD hay không là **[CẦN XÁC NHẬN]**; khi bài được công bố thì thay bằng bài báo: 
 
 ```bibtex
