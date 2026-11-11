@@ -64,5 +64,5 @@ The remaining hours are the valid target hours (`valid`), identical for every mo
 ## License, AI assistance and citation
 
 - **Code:** MIT License (see `LICENSE`). The ACN-Data records are not covered by this license; they come from the Caltech ACN-Data project (https://ev.caltech.edu/dataset), which asks users to cite Lee, Li and Low, "ACN-Data: Analysis and Applications of an Open EV Charging Dataset", e-Energy 2019.
-- **AI assistance:** the group used Claude (Anthropic) to help write and re-run code, check the numbers against the notebook outputs, and draft the paper and the documentation. The experiments reported in the paper were run by the group in Kaggle notebooks, and the authors are responsible for the content.
+- **AI assistance:** the group used Claude (Anthropic) to help write and re-run code, check the numbers against the notebook outputs, and draft the paper and the documentation; Gemini and ChatGPT were used only for independent review of the paper. Prompts are listed in the group's AI audit log. The experiments reported in the paper were run by the group in Kaggle notebooks, and the authors are responsible for the content.
 - **Citation:** see the BibTeX entry at the end of `REPRODUCE.md`.
